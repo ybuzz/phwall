@@ -26,7 +26,7 @@ btn.onclick=function () {
 function move(obj,time,doFn,callBack) {
     var called=true                                                           //解决transitionend调用多次的问题
     obj.style.transition=time;                                                //添加过度效果，时间为time
-    doFn.call(obj);//因让此函数指向obj
+    doFn.call(obj);                                                           //此处为在属性函数中使用this，用callfangfa让此函数指向obj
     obj.addEventListener('transitionend',function () {                        //事件监听，过渡效果结束
         if(called){
             //&&符号特性，左边为真则返回右边结果，左边为假则返回false，若没有回调函数依然不会报错
