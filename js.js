@@ -65,19 +65,22 @@ function final() {
         imgs[i].style.transform='rotateY(0deg)translateZ(-'+Math.random()*1000+'px)';
         (function (i) {
             setTimeout(function () {
-                move(imgs[i],'2s',step3)
+                move(imgs[i],'2s',step3,callBack3)
             },Math.random()*1000)
         })(i)
     };
-    endNum=0;
 }
 //最终调用属性函数
 function step3() {
     allEnd++;
-    if(allEnd==imgs.length){
-        on=true
-    }
-    console.log(on)
     this.style.opacity=1;
     this.style.transform='rotateY(-360deg)translateZ(0)';
+}
+//最终回调函数
+function callBack3() {              //最终清零并接触按钮限制
+    if(allEnd==imgs.length){
+        on=true
+        endNum=0;
+        allEnd=0;
+    }
 }
