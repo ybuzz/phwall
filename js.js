@@ -5,7 +5,6 @@ var endNum=0;   //判断第二步图片运动进度
 var allEnd=0;   //判断图片运动是否全部完成
 var on =true;   //  决定按钮是否可用
 btn.onclick=function () {
-    console.log(on)
     if(!on){
         return
     }
@@ -39,7 +38,6 @@ function move(obj,time,doFn,callBack) {
 //第一步属性函数
 function step1() {
     this.style.transform='scale(0)';
-
 }
 //第一步回调函数(为第二布要操作的动作)
 function callBack1() {
